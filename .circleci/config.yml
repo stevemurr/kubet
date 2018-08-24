@@ -2,9 +2,7 @@ version: 2
 jobs:
   build:
     docker:
+      - image: circleci:golang
     steps:
       - checkout
-      - setup_docker_engine
-      - run:
-        name: Build Image
-        command: make build
+      - run: make build
