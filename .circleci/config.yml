@@ -2,10 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: docker:dind
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
-      - setup_docker_engine
+      - setup_remote_docker
       - run:
           name: Build Binary
           command: 
