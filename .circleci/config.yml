@@ -2,9 +2,11 @@ version: 2
 jobs:
   build:
     docker:
+      - image: docker:dind
     steps:
       - checkout
       - setup_docker_engine
       - run:
-        name: Build Image
-        command: make build
+          name: Build Binary
+          command: 
+            - make build
